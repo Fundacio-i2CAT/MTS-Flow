@@ -1,0 +1,30 @@
+# Environments
+venv/
+.venv/
+env/
+env.bak/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Project Specific
+legacy/
+checkpoints/
+mlruns/
+plots/
+syn_data/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/

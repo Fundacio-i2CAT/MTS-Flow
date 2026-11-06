@@ -1,0 +1,42 @@
+dataset:
+  batch_size: 64
+  data_path: data/ETTh1_seq_len336_overlap326.h5
+  normalization: global_min_max
+  num_features: 6
+  num_gated_bins: 0
+  num_workers: 4
+  sequence_length: 336
+  window_size: 0
+flow_matching:
+  sigma_min: 1e-4
+mlflow:
+  experiment_name: MTS-Flow_experiment
+  tracking_uri: http://127.0.0.1:5000
+model:
+  architecture: mamba_3_flow_matching
+  bin_emb_dim: 4
+  chunk_size: 16
+  d_model: 256
+  d_state: 64
+  dropout: 0.1003529330511306
+  expand: 4
+  headdim: 64
+  n_layers: 4
+training:
+  ema_decay: 0.98
+  epochs: 1200
+  fft_start_epoch: 40
+  gradient_clip: 1.0
+  learning_rate: 0.0003727400418934511
+  loss_type: spectral_fft
+  min_lr: 1e-5
+  mixed_precision: true
+  raw_loss_weight: 1.0
+  scheduler: cosine
+  spectral_fft_weight: 0.057546599653765976
+  use_ema: false
+  val_every: 20
+  warmup_epochs: 10
+  warmup_start_factor: 0.01
+  weight_decay: 1.7448363820428502e-05
+

@@ -1,0 +1,50 @@
+[project]
+name = "MTS-Flow"
+version = "0.1.0"
+description = "Flow Matching for Multivariate Time Series Generation using Mamba-based architectures."
+authors = [
+    { name = "Research Team" }
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "torch==2.10.0",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "pyyaml>=6.0.1",
+    "mlflow>=3.1",
+    "tqdm>=4.66.0",
+    "tsfeatures>=0.4.3",
+    "mamba-ssm>=2.0.0,<3.0.0",
+    "pyarrow>=15.0.0",
+    "fastparquet>=2024.2.0",
+    "statsmodels>=0.14.0",
+    "scipy==1.15.3",
+    "scikit-learn>=1.4.0",
+    "h5py>=3.16.0",
+    "torchinfo>=1.8.0",
+    "optuna>=4.9.0",
+    "thop>=0.1.1.post2209072238",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pylint>=3.1.0",
+    "flake8>=7.0.0",
+    "pytest>=8.0.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+
+[tool.uv]
+package = false
+
+[tool.uv.extra-build-dependencies]
+mamba-ssm = ["torch", "packaging", "ninja"]
+
