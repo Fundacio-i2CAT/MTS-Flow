@@ -1,5 +1,5 @@
 import torch.nn as nn
-from architecture.mts_gan_architecture import Mamba3FlowMatchingModel
+from architecture.mts_flow_architecture import Mamba3FlowMatchingModel
 
 
 def build_model(config: dict[str, any]) -> nn.Module:
